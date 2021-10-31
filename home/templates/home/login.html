@@ -1,0 +1,87 @@
+{% extends 'base.html' %} {% block content%}
+<link rel="stylesheet" href="styles.css" />
+<style>
+  body {
+    font-family: montserrat;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(120deg, #2980b9, #8e44ad);
+  }
+
+  #center {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.404);
+    border-radius: 10px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    top: 25%;
+    left: 40%;
+    padding-right: 20px;
+  }
+
+  #center h1 {
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    border-bottom: 1px solid silver;
+  }
+
+  #center form {
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+  }
+
+  input[type="submit"] {
+    width: 150px;
+    height: 50px;
+    border: 1px solid;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18 px;
+    color: #e9f4fb;
+    font-weight: 700px;
+    cursor: pointer;
+    outline: none;
+    margin: 0 0 0 50px;
+  }
+
+  input[type="submit"]:hover {
+    border-color: #2691d9;
+    transition: 0.5s;
+  }
+
+  #signup_link {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+  }
+
+  #signup_link a {
+    color: #2691d9;
+    text-decoration: none;
+  }
+
+  #signup_link a:hover {
+    text-decoration: underline;
+    background-color: none;
+  }
+</style>
+
+<body class="">
+  <div id="center">
+    <h1>Login</h1>
+
+    <form method="post">
+      {% csrf_token%} {{form.as_p}}
+      <input type="submit" class="btn btn-secondary" value="Login" />
+    </form>
+
+    <div id="signup_link">
+      Not a member?
+      <a href="{% url 'signup'%}" class="btn btn-outline-dark me-1">Sign Up</a>
+    </div>
+  </div>
+</body>
+{% endblock%}

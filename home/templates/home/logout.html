@@ -1,0 +1,66 @@
+{% extends 'base.html' %} {% block content%}
+<style>
+  .face {
+    width: 175px;
+    aspect-ratio: 1/1;
+    background-color: yellow;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-color: rgb(231, 171, 91);
+    border-width: 4px;
+  }
+  .eyes {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-100%);
+    left: 0;
+  }
+  .mouth {
+    padding-left: -10%;
+    width: 75px;
+    height: 90px;
+    background-color: brown;
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+  }
+
+  .mouth::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: yellow;
+    width: 110%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  .eye {
+    width: 10px;
+    height: 10px;
+    background-color: brown;
+    border-radius: 50%;
+  }
+</style>
+<h1>Hope to see you soon:</h1>
+
+<div class="container">
+  <div class="face">
+    <div class="eyes">
+      <div class="eye"></div>
+      <div class="eye"></div>
+    </div>
+    <div class="mouth"></div>
+  </div>
+</div>
+{% endblock%}
